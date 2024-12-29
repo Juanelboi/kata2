@@ -31,5 +31,17 @@ public enum WeaponType {
     ColossalSword,
     Reaper,
     Ballista,
-    GreatSpear
+    GreatSpear;
+
+    public static WeaponType parseWeaponType(String s) {
+        String wt ="";
+        String[] s1 = s.split(" ");
+        for (String line : s1) {
+            wt+=line;
+        }
+        for (WeaponType value : WeaponType.values()) {
+            if (wt.equals(value.name())) return value;
+        }
+        return null;
+    }
 }
