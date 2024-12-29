@@ -32,5 +32,4 @@ public enum WeaponType {
     Reaper,
     Ballista,
     GreatSpear
-
 }
