@@ -1,4 +1,8 @@
-package software.ulpgc;
+package software.ulpgc.io;
+
+import software.ulpgc.model.Scaling;
+import software.ulpgc.model.Weapon;
+import software.ulpgc.model.WeaponType;
 
 public class CsvWeaponDeserializer implements WeaponDeserializer {
     @Override

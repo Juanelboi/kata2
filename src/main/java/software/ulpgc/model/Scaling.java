@@ -1,4 +1,4 @@
-package software.ulpgc;
+package software.ulpgc.model;
 
 public enum Scaling {
     noScaling,
