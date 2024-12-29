@@ -33,5 +33,4 @@ public enum WeaponType {
     Ballista,
     GreatSpear
 
-
 }
