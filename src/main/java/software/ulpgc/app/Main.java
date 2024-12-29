@@ -21,7 +21,9 @@ public class Main {
         File filecsv = new File("ERWweb.csv");
         List<Weapon> weapons = new FileWeaponLoader(filecsv, new CsvWeaponDeserializer()).load();
 
-        System.out.println(weapons);
+        List<Weapon> sword = weapons.stream().filter(w -> w.type() == WeaponType.ColossalSword && (w.physicalDamage() > 400 || w.name().equals("Starscourge Greatsword"))).toList();
+
+        System.out.println(sword);
 
     }
 }
