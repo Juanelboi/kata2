@@ -1,4 +1,4 @@
-package software.ulpgc.app;
+package software.ulpgc.io;
 
 import java.io.IOException;
 import java.io.InputStream;
