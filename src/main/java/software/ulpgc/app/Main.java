@@ -16,14 +16,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         File path = new File("");
         String Path = path.getAbsolutePath();
-        String urlcsvInput= "https://raw.githubusercontent.com/Juanelboi/Resources/refs/heads/main/ERW.csv";
-        String urltsvInput= "https://raw.githubusercontent.com/Juanelboi/Resources/refs/heads/main/ERW.tsv";
-        String urlcsvOutputPath = Path+"\\ERWweb.csv";
-        String urltsvOutputPath = Path+"\\ERWweb.tsv";
-        download(urlcsvInput, urlcsvOutputPath);
-        download(urltsvInput, urltsvOutputPath);
-        File filecsv = new File("ERWweb.csv");
-        File filetsv = new File("ERWweb.tsv");
+        File filecsv = getCsvFile(Path);
+        File filetsv = getTsvFile(Path);
         List<Weapon> weaponscsv = new FileWeaponLoader(filecsv, new CsvWeaponDeserializer()).load();
         List<Weapon> weaponstsv = new FileWeaponLoader(filetsv, new TsvWeaponDeserializer()).load();
 
@@ -35,6 +29,22 @@ public class Main {
         System.out.println(swordtsv);
 
 
-        
+
+    }
+
+    private static File getTsvFile(String Path) {
+        String urltsvInput= "https://raw.githubusercontent.com/Juanelboi/Resources/refs/heads/main/ERW.tsv";
+        String urltsvOutputPath = Path +"\\ERWweb.tsv";
+        download(urltsvInput, urltsvOutputPath);
+        File filetsv = new File("ERWweb.tsv");
+        return filetsv;
+    }
+
+    private static File getCsvFile(String Path) {
+        String urlcsvInput= "https://raw.githubusercontent.com/Juanelboi/Resources/refs/heads/main/ERW.csv";
+        String urlcsvOutputPath = Path +"\\ERWweb.csv";
+        download(urlcsvInput, urlcsvOutputPath);
+        File filecsv = new File("ERWweb.csv");
+        return filecsv;
     }
 }
